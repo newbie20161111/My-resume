@@ -1,0 +1,24 @@
+[
+{	
+	"name":"1",
+	"img":"img/1.png",
+	"title":"mac 11 computer",
+	"no":"no120",
+	"price":10000
+},
+{	
+	"name":"2",
+	"img":"img/2.png",
+	"title":"mac 13 computer",
+	"no":"no123",
+	"price":12000
+},
+{	
+	"name":"3",
+	"img":"img/3.png",
+	"title":"mac 15 computer",
+	"no":"no125",
+	"price":14000
+}
+
+]

@@ -1,0 +1,24 @@
+﻿[
+	{
+		"category":"大学",
+		"name":"曾就读于：中北大学",
+		"url":"学校网址：http://www.nuc.edu.cn/",
+		"image":"img/zbdx.jpg",
+		"logoImg":"img/zbdxLogo.gif",
+		"time":"时间：2011年-2015年",
+		"property":"学历：本科",
+		"academy":"学院：机械与动力工程",
+		"major":"专业：车辆工程"
+	},
+	{
+		"category":"工作",
+		"name":"曾工作于：xx公司",
+		"url":"公司网址：http://www.xxx.com/",
+		"image":"img/work1.png",
+		"logoImg":"img/work1.jpg",
+		"time":"时间：2015年-2016年",
+		"property":"",
+		"academy":"部门：前端",
+		"major":"岗位：html,css,js"
+	}
+]

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css"/>
+		<link rel="stylesheet" href="css/iconfont.css"/>
+
+		<style>
+			.title{
+				margin: 20px 15px 10px;
+				color: #6d6d72;
+				font-size: 15px;
+			}
+			
+			.oa-contact-cell.mui-table .mui-table-cell {
+				padding: 11px 0;
+				vertical-align: middle;
+			}
+			
+			.oa-contact-cell {
+				position: relative;
+				margin: -11px 0;
+			}
+	
+			.oa-contact-avatar {
+				width: 75px;
+			}
+			.oa-contact-avatar img {
+				border-radius: 50%;
+			}
+			.oa-contact-content {
+				width: 100%;
+			}
+			.oa-contact-name {
+				margin-right: 20px;
+			}
+			.oa-contact-name, .oa-contact-position {
+				float: left;
+			}
+			
+			
+		</style>
+	</head>
+
+	<body>
+		<audio src="src/Traveling Light.mp3" autoplay="autoplay">
+			您的浏览器不支持 audio 标签。
+		</audio>
+		<header class="mui-bar mui-bar-nav" style="background: dodgerblue">
+			<a class="mui-icon iconfont icon-saomiao mui-pull-left" id="scan" style="color:#000" ></a>
+			<h1 class="mui-title">我的简历app</h1>
+			<a class="mui-icon iconfont icon-paizhao mui-pull-right" href="#sheet1" style="color:#000"></a>
+		</header>
+		<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+		    <!-- 可选择菜单 -->
+		    <ul class="mui-table-view">
+		      <li class="mui-table-view-cell">
+		        <a href="#" onclick="captureImage()">拍照</a>
+		      </li>
+		      <li class="mui-table-view-cell">
+		        <a href="#" onclick="galleryImg()">本地相册</a>
+		      </li>
+		    </ul>
+		    <!-- 取消菜单 -->
+		    <ul class="mui-table-view">
+		      <li class="mui-table-view-cell">
+		        <a href="#sheet1"><b>取消</b></a>
+		      </li>
+		    </ul>
+		</div>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active" href="#tabbar">
+				<span class="mui-icon iconfont icon-diannao"></span>
+				<span class="mui-tab-label">技能</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-exp">
+				<span class="mui-icon iconfont icon-companyexperience"></span>
+				<span class="mui-tab-label">经历</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-project">
+				<span class="mui-icon iconfont icon-xiangmu"></span>
+				<span class="mui-tab-label">项目</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-me">
+				<span class="mui-icon iconfont icon-xiaolian1"></span>
+				<span class="mui-tab-label">我</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div id="tabbar" class="mui-control-content mui-active">
+				<div class="title">
+				我的技能
+				</div>
+				<ul class="mui-table-view" id="skill">
+					
+				</ul>
+			</div>
+			<div id="tabbar-with-exp" class="mui-control-content">
+				<div class="title">经历</div>
+				<div id="exp"></div>
+			</div>
+				
+			<div id="tabbar-with-project" class="mui-control-content">
+				<div class="title">项目</div>
+				<div class="mui-card">
+					<div class="mui-card-header">项目1</div>
+					<div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(img/pro1.png)"></div>
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<p>Posted on January 18, 2016</p>
+							<p style="color: #333;">这里显示文章摘要，让读者对文章内容有个粗略的概念...</p>
+						</div>
+					</div>
+					<div class="mui-card-footer">
+						<a class="mui-card-link">Like</a>
+						<a class="mui-card-link">Read more</a>
+					</div>
+				</div>
+				<div class="mui-card">
+					<div class="mui-card-header">项目2</div>
+					<div class="mui-card-header mui-card-media" style="height:40vw;background-image:url(img/pro2.png)"></div>
+					<div class="mui-card-content">
+						<div class="mui-card-content-inner">
+							<p>Posted on January 18, 2016</p>
+							<p style="color: #333;">这里显示文章摘要，让读者对文章内容有个粗略的概念...</p>
+							<p style="color: #333;">这里显示文章摘要，让读者对文章内容有个粗略的概念...</p>
+						</div>
+					</div>
+					<div class="mui-card-footer">
+						<a class="mui-card-link">Like</a>
+						<a class="mui-card-link">Read more</a>
+					</div>
+				</div>
+			</div>
+			<div id="tabbar-with-me" class="mui-control-content">
+				<div class="title" style="text-align: center;"><img src="img/tx.jpg" style="width:150px;height:150px;border-radius: 50%;"/></div>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a>姓名<span class="mui-pull-right">兰宁</span></a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a>QQ号<span class="mui-pull-right">88888888</span></a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a>手机号<span class="mui-pull-right">18601234567</span></a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a>邮箱地址<span class="mui-pull-right">hbuilder@dcloud.io</span></a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a>GitHub<span class="mui-pull-right">hbuilder@dcloud.io</span></a>
+					</li>
+				</ul>
+			</div>
+			
+			
+			<div id="expmore" class="mui-control-content">
+				
+			</div>
+		</div>
+		
+		<div id="menu" class="mui-popover mui-popover-bottom mui-popover-action" style="margin-left: -7px;">
+		    <ul class="mui-table-view mui-grid-view mui-grid-9">
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" onclick="opclmenu()"><a href="#">
+		                <span class="mui-icon iconfont icon-shouyeshouye"></span>
+		                <div class="mui-media-body">首页</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" onclick="removeLFStorage(),opclmenu()"><a href="#">
+		                <span class="mui-icon iconfont icon-shuaxin1"></span>
+		                <div class="mui-media-body">刷新</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" onclick="musicControl()"><a href="#">
+		                <span class="mui-icon iconfont icon-yinlekai" id="musicIcon"></span>
+		                <div class="mui-media-body">音乐：<span id="musicStatus">开</span></span></div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" ><a href="#">
+		                <span class="mui-icon iconfont icon-shezhi"></span>
+		                <div class="mui-media-body">设置</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		                <span class="mui-icon iconfont icon-guanyu"></span>
+		                <div class="mui-media-body">关于</div></a></li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#" onclick="closeApp()">
+		                <span class="mui-icon iconfont icon-tuichu"></span>
+		                <div class="mui-media-body">退出</div></a></li>
+		    </ul> 
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		// 扩展API加载完毕后调用onPlusReady回调函数 
+		document.addEventListener( "plusready", onPlusReady, false );
+		// 扩展API加载完毕，现在可以正常调用扩展API 
+		function onPlusReady() {
+			mui.plusReady(function() {
+				//读取本地存储，检查是否为首次启动
+				var showGuide = plus.storage.getItem("lauchFlag");
+				//仅支持竖屏显示
+				plus.screen.lockOrientation("portrait-primary");
+				if(showGuide) {
+					//有值，说明已经显示过了，无需显示；
+					//关闭splash页面；
+					plus.navigator.closeSplashscreen();
+					plus.navigator.setFullscreen(false);
+				} else {
+					//显示启动导航
+					mui.openWindow({
+						id: 'guide',
+						url: 'guide.html',
+						styles: {
+							popGesture: "none"
+						},
+						show: {
+							aniShow: 'none'
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+				}
+				
+			});
+			
+			//调用menu监听
+			menuevent();
+			startPlay();
+			
+			
+			
+
+			mui.ajax('http://www.lanerd.online/me/mock/skill.json',{
+//				data:{
+//					category:'category',
+//					name:'name',
+//					time:'time',
+//					level:'level'
+//				},
+				dataType:'json',//服务器返回json格式数据
+				type:'get',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					var html = "";
+					for(var i=0,datalen=data.length;i<datalen;i++){
+						html +="<li class='mui-table-view-cell mui-media'><a href='javascript:;'><img class='mui-media-object mui-pull-left' src='http://www.lanerd.online/me/"+data[i].imgUrl+"'><div class='mui-media-body'>"+data[i].category+"<p class='mui-ellipsis'>"+data[i].name+"</p></div></a></li>"; 
+					}
+					jQuery("#skill").html(html);
+				},
+				error:function(xhr,type,errorThrown){
+					alert("加载数据失败");
+					//异常处理；
+					console.log(type);
+				}
+			});
+			
+			expCont();
+		}
+		
+		document.getElementById('scan').addEventListener('tap', function() {
+		  //打开关于页面
+		  mui.openWindow({
+		    url: 'scan.html', 
+		    id:'scan',
+		    show:{
+		      autoShow:true,//页面loaded事件发生后自动显示，默认为true
+		      aniShow:'zoom-out'//页面显示动画，默认为”slide-in-right“；
+		    },
+		  });
+		});
+		//刷新按钮打开启动导航
+		function removeLFStorage() {
+			plus.storage.removeItem("lauchFlag");
+		}
+		//播放音乐
+		var p = null; 
+		function startPlay() {
+			if ( plus.audio == undefined ) {
+				alert( "Device not ready!" );
+			}
+			p = plus.audio.createPlayer( "src/Traveling Light.mp3" );
+			p.play( function () {
+				alert( "Audio play success!" ); 
+				
+			}, function ( e ) {
+				alert( "Audio play error: " + e.message ); 
+			} ); 
+		}
+		function stopPlay() {
+			p.stop();
+		}
+		//音乐控制
+		function musicControl(){
+			if(jQuery("#musicStatus").html()=="开"){
+				stopPlay();
+				jQuery("#musicStatus").html("关");
+				jQuery("#musicIcon").removeClass("icon-yinlekai");
+				jQuery("#musicIcon").addClass("icon-yinleguan");
+				plus.storage.setItem("music", "");
+				
+			}else{
+				startPlay();
+				jQuery("#musicStatus").html("开");
+				jQuery("#musicIcon").removeClass("icon-yinleguan");
+				jQuery("#musicIcon").addClass("icon-yinlekai");
+				plus.storage.setItem("music", "true");
+			}
+		}
+		//菜单显示隐藏监听
+		function menuevent(){
+			plus.key.addEventListener("menubutton",function(){
+				opclmenu();
+			});
+		}
+		//menu显示隐藏
+		function opclmenu(){
+			mui('#menu').popover('toggle');
+		}
+		//退出程序
+		function closeApp(){
+			plus.runtime.quit();
+			stopPlay();
+		}
+		
+		// 拍照
+		function captureImage(){
+			var cmr = plus.camera.getCamera();
+			var res = cmr.supportedImageResolutions[0];
+			var fmt = cmr.supportedImageFormats[0];
+			console.log("Resolution: "+res+", Format: "+fmt);
+			cmr.captureImage( function( path ){
+					alert( "Capture image success: " + path );  
+				},
+				function( error ) {
+					alert( "Capture image failed: " + error.message );
+				},
+				{resolution:res,format:fmt}
+			);
+		}
+		// 从相册中选择图片 
+		function galleryImg() {
+			// 从相册中选择图片
+			console.log("从相册中选择图片:");
+		    plus.gallery.pick( function(path){
+		    	console.log(path);
+		    }, function ( e ) {
+		    	console.log( "取消选择图片" );
+		    }, {filter:"image"} );
+		}
+		// 从相册中选择多张图片 
+		function galleryImgs(){
+			// 从相册中选择图片
+			console.log("从相册中选择多张图片:");
+		    plus.gallery.pick( function(e){
+		    	for(var i in e.files){
+			    	console.log(e.files[i]);
+		    	}
+		    }, function ( e ) {
+		    	console.log( "取消选择图片" );
+		    },{filter:"image",multiple:true});
+		}
+		
+		function expCont(){
+			mui.ajax('http://www.lanerd.online/me/mock/exp.json',{
+				dataType:'json',//服务器返回json格式数据
+				type:'get',//HTTP请求类型
+				timeout:10000,//超时时间设置为10秒；
+				headers:{'Content-Type':'application/json'},	              
+				success:function(data){
+					var html = "";
+					for(var i=0,datalen=data.length;i<datalen;i++){
+						html +="<div class='mui-card'><div class='mui-card-header mui-card-media' style='height:40vw;background-image:url(http://www.lanerd.online/me/"+data[i].image+")'></div><div class='mui-card-content'><div class='mui-card-content-inner'><h3>"+data[i].category+"经历</h3><p style='color:#333;'>"+data[i].name+"</br>"+data[i].url+"</br>"+data[i].time+"</br>...</p></div></div><div class='mui-card-footer'><a class='mui-card-link'></a><a class='mui-card-link'>更多more..</a></div></div>"; 
+					};
+					
+					jQuery("#exp").html(html);
+
+				},
+				error:function(xhr,type,errorThrown){
+					alert("加载数据失败");
+					//异常处理；
+					console.log(type);
+				}
+			});
+		}
+		
+		
+		
+		
+
+	</script>
+</html>

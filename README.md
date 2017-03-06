@@ -1,5 +1,5 @@
 # My-resume
-## 简介：
+## 简介
   个人简历App，下载地址：http://pan.baidu.com/s/1skT9iR7    密码：tzkj
 ## 更新日志
   ver 1.0
@@ -14,6 +14,4 @@
 ## TODO
   接下来的开发/维护计划：完善内容
 ## License
-  
-## 遵守的协议
   
